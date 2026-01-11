@@ -203,22 +203,6 @@ namespace esphome
 
                 void setCoverPosition(const std::string& entity, int value){
                     esphome::api::HomeassistantActionRequest resp;
-                    resp.set_service(esphome::StringRef("cover.set_cover_position"));
-                    resp.data.init(2);
-                    
-                    auto &kv1 = resp.data.emplace_back();
-                    kv1.set_key(esphome::StringRef("entity_id"));
-                    kv1.value = entity;
-
-                    auto &kv2 = resp.data.emplace_back();
-                    kv2.set_key(esphome::StringRef("position"));
-                    kv2.value = to_string(value);
-
-                    api::global_api_server->send_homeassistant_action(resp);
-                    ESP_LOGD("HA_API", "Cover set Position: %i on %s", value, entity.c_str());
-				}
-				void setCoverTiltPosition(const std::string& entity, int value){
-					esphome::api::HomeassistantActionRequest resp;
                     resp.set_service(esphome::StringRef("cover.set_cover_tilt_position"));
                     resp.data.init(2);
                     
@@ -228,6 +212,22 @@ namespace esphome
 
                     auto &kv2 = resp.data.emplace_back();
                     kv2.set_key(esphome::StringRef("tilt_position"));
+                    kv2.value = to_string(value);
+
+                    api::global_api_server->send_homeassistant_action(resp);
+                    ESP_LOGD("HA_API", "Cover set Tilt Position: %i on %s", value, entity.c_str());
+				}
+				void setCoverTiltPosition(const std::string& entity, int value){
+					esphome::api::HomeassistantActionRequest resp;
+                    resp.set_service(esphome::StringRef("cover.set_cover_position"));
+                    resp.data.init(2);
+                    
+                    auto &kv1 = resp.data.emplace_back();
+                    kv1.set_key(esphome::StringRef("entity_id"));
+                    kv1.value = entity;
+
+                    auto &kv2 = resp.data.emplace_back();
+                    kv2.set_key(esphome::StringRef("position"));
                     kv2.value = to_string(value);
 
                     api::global_api_server->send_homeassistant_action(resp);
