@@ -130,7 +130,7 @@ namespace esphome
                         }
 
                         if ( M5Dial.Display.getBrightness()<=0 ) {
-                            M5Dial.Display.setBrightness(100);
+                            M5Dial.Display.setBrightness(5);
                             ESP_LOGI("DISPLAY", "Display on");
                         }
                     }
