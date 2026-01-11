@@ -64,6 +64,8 @@ CONF_DEVICE_MODE_TEMP_COLORS          = "colors"
 CONF_DEVICE_COVER                     = "covers"
 CONF_DEVICE_COVER_POSITION_MODE       = "position_mode"
 
+CONF_DEVICE_COVER_TILT                = "covers_tilt"
+CONF_DEVICE_COVER_TILT_POSITION_MODE  = "tilt_position_mode"
 
 # SWITCH
 CONF_DEVICE_SWITCH                    = "switches"
