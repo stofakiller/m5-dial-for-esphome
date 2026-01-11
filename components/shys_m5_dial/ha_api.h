@@ -211,7 +211,7 @@ namespace esphome
                     kv1.value = entity;
 
                     auto &kv2 = resp.data.emplace_back();
-                    kv2.set_key(esphome::StringRef("tilt_position"));
+                    kv2.set_key(esphome::StringRef("position"));
                     kv2.value = to_string(value);
 
                     api::global_api_server->send_homeassistant_action(resp);
