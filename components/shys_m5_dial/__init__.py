@@ -153,7 +153,7 @@ DEFAULT_CLIMATE_BOTTOM_BAR_TEXT        = "0xFFFFFF"  # WHITE
 
 
 
-SCREENSAVER = ["off", "clock"]
+SCREENSAVER = ["off", "clock","weather"]
 
 
 # ------------------------------------------------------
