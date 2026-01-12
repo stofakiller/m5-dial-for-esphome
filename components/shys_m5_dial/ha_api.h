@@ -447,6 +447,7 @@ namespace esphome
                 void openLock(const std::string& entity){
                     esphome::api::HomeassistantActionRequest resp;
                     resp.set_service(esphome::StringRef("lock.open"));
+					resp.data.init(1);
                     auto &kv = resp.data.emplace_back();
                     kv.set_key(esphome::StringRef("entity_id"));
                     kv.value = entity;
@@ -457,6 +458,7 @@ namespace esphome
                 void lockLock(const std::string& entity){
                     esphome::api::HomeassistantActionRequest resp;
                     resp.set_service(esphome::StringRef("lock.lock"));
+					resp.data.init(1);
                     auto &kv = resp.data.emplace_back();
                     kv.set_key(esphome::StringRef("entity_id"));
                     kv.value = entity;
@@ -467,6 +469,7 @@ namespace esphome
                 void unlockLock(const std::string& entity){
                     esphome::api::HomeassistantActionRequest resp;
                     resp.set_service(esphome::StringRef("lock.unlock"));
+					resp.data.init(1);
                     auto &kv = resp.data.emplace_back();
                     kv.set_key(esphome::StringRef("entity_id"));
                     kv.value = entity;
@@ -484,7 +487,7 @@ namespace esphome
                     
                     esphome::api::HomeassistantActionRequest resp;
                     resp.set_service(esphome::StringRef(service));
-                    
+                    resp.data.init(1);
                     auto &kv1 = resp.data.emplace_back();
                     kv1.set_key(esphome::StringRef("entity_id"));
                     kv1.value = entity;
@@ -507,7 +510,7 @@ namespace esphome
                 void timerStart(const std::string& entity){
                     esphome::api::HomeassistantActionRequest resp;
                     resp.set_service(esphome::StringRef("timer.start"));
-                    
+                    resp.data.init(1);
                     auto &kv = resp.data.emplace_back();
                     kv.set_key(esphome::StringRef("entity_id"));
                     kv.value = entity;
@@ -520,7 +523,7 @@ namespace esphome
                 void timerStart(const std::string& entity, int duration){
                     esphome::api::HomeassistantActionRequest resp;
                     resp.set_service(esphome::StringRef("timer.start"));
-                    
+                    resp.data.init(2);
                     auto &kv1 = resp.data.emplace_back();
                     kv1.set_key(esphome::StringRef("entity_id"));
                     kv1.value = entity;
@@ -536,6 +539,7 @@ namespace esphome
                 void timerPause(const std::string& entity){
                     esphome::api::HomeassistantActionRequest resp;
                     resp.set_service(esphome::StringRef("timer.pause"));
+					resp.data.init(1);
                     auto &kv = resp.data.emplace_back();
                     kv.set_key(esphome::StringRef("entity_id"));
                     kv.value = entity;
@@ -546,6 +550,7 @@ namespace esphome
                 void timerCancle(const std::string& entity){
                     esphome::api::HomeassistantActionRequest resp;
                     resp.set_service(esphome::StringRef("timer.cancle"));
+					resp.data.init(1);
                     auto &kv = resp.data.emplace_back();
                     kv.set_key(esphome::StringRef("entity_id"));
                     kv.value = entity;
@@ -556,6 +561,7 @@ namespace esphome
                 void timerFinish(const std::string& entity){
                     esphome::api::HomeassistantActionRequest resp;
                     resp.set_service(esphome::StringRef("timer.finish"));
+					resp.data.init(1);
                     auto &kv = resp.data.emplace_back();
                     kv.set_key(esphome::StringRef("entity_id"));
                     kv.value = entity;
@@ -566,7 +572,7 @@ namespace esphome
                 void timerChange(const std::string& entity, int duration){
                     esphome::api::HomeassistantActionRequest resp;
                     resp.set_service(esphome::StringRef("timer.change"));
-                    
+                    resp.data.init(2);
                     auto &kv1 = resp.data.emplace_back();
                     kv1.set_key(esphome::StringRef("entity_id"));
                     kv1.value = entity;
